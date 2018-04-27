@@ -1,4 +1,4 @@
-FROM php:7.1-fpm
+FROM php:7.2-fpm
 
 MAINTAINER Nguyen Ngoc Vinh <ngocvinh.nnv@gmail.com>
 
@@ -36,8 +36,8 @@ RUN usermod -u 1000 www-data
 
 WORKDIR /var/www/app
 
-ADD ./config/php.ini /usr/local/etc/php/conf.d
-ADD ./config/www.conf /usr/local/etc/php-fpm.d/
+ADD ./conf/php.ini /usr/local/etc/php/conf.d
+ADD ./conf/www.conf /usr/local/etc/php-fpm.d/
 
 CMD ["php-fpm"]
 
