@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:7.1-fpm
 
 MAINTAINER Nguyen Ngoc Vinh <ngocvinh.nnv@gmail.com>
 
@@ -13,9 +13,15 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libssl-dev \
     libmcrypt-dev \
+    vim \
     zlib1g-dev libicu-dev g++ \
     --no-install-recommends \
     && rm -r /var/lib/apt/lists/*
+
+RUN docker-php-ext-configure gd \
+    --enable-gd-native-ttf \
+    --with-jpeg-dir=/usr/lib \
+    --with-freetype-dir=/usr/include/freetype2
 
 RUN docker-php-ext-configure intl
 
@@ -29,6 +35,7 @@ RUN docker-php-ext-install \
     bcmath \
     pdo_mysql \
     pdo_pgsql \
+    gd \
     intl \
     zip
 
