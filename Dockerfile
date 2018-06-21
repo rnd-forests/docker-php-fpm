@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     libmemcached-dev \
     curl \
     libjpeg-dev \
-    libpng12-dev \
+    libpng-dev \
     libfreetype6-dev \
     libssl-dev \
     libmcrypt-dev \
@@ -28,10 +28,11 @@ RUN docker-php-ext-configure intl
 RUN pecl channel-update pecl.php.net \
     && pecl install mongodb \
     && pecl install xdebug \
-    && docker-php-ext-enable xdebug
+    && docker-php-ext-enable xdebug \
+    && pecl install mcrypt-1.0.1 \
+    && docker-php-ext-enable mcrypt
 
 RUN docker-php-ext-install \
-    mcrypt \
     bcmath \
     pdo_mysql \
     pdo_pgsql \
