@@ -47,6 +47,14 @@ WORKDIR /var/www/app
 ADD ./conf/php.ini /usr/local/etc/php/conf.d
 ADD ./conf/www.conf /usr/local/etc/php-fpm.d/
 
-CMD ["php-fpm"]
+COPY ./xdebug.ini /tmp/
+RUN cat /tmp/xdebug.ini >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+COPY ./docker-entrypoint.sh /usr/local/bin/
+RUN ["chmod", "+x", "/usr/local/bin/docker-entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 EXPOSE 9000
+CMD ["php-fpm"]
