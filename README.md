@@ -1,18 +1,30 @@
-# PHP FPM for Laravel project
+# PHP FPM (FastCGI Process Manager)
 
 Project root directory should be mapped to `/var/www/app` inside the container.
 
 ### Extensions
-Some installed PHP extensions are:
+Installed PHP extensions:
 - `gd`
+- `ldap`
 - `mongodb`
 - `xdebug`
 - `mcrypt`
+- `redis`
+- `memcached`
 - `bcmath`
+- `bz2`
+- `calendar`
+- `iconv`
+- `mbstring`
+- `mysqli`
 - `pdo_mysql`
 - `pdo_pgsql`
+- `pgsql`
+- `opcache`
 - `intl`
 - `soap`
+- `exif`
+- `zip`
 
 ### Xdebug
 The default configuration file for Xdebug is similar to:
