@@ -12,6 +12,7 @@ Some installed PHP extensions are:
 - `pdo_mysql`
 - `pdo_pgsql`
 - `intl`
+- `soap`
 
 ### Xdebug
 The default configuration file for Xdebug is similar to:
