@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libfreetype6-dev \
     libssl-dev \
+    libxml2-dev \
     libmcrypt-dev \
     vim \
     zlib1g-dev libicu-dev g++ \
@@ -38,6 +39,7 @@ RUN docker-php-ext-install \
     pdo_pgsql \
     gd \
     intl \
+    soap \
     zip
 
 RUN usermod -u 1000 www-data
