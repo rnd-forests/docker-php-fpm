@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     libicu-dev \
     libldap2-dev \
+    htop \
     curl \
     git \
     vim \
