@@ -65,7 +65,8 @@ RUN docker-php-ext-install \
     soap \
     ldap \
     exif \
-    zip
+    zip \
+    pcntl
 
 RUN usermod -u 1000 www-data
 
