@@ -25,6 +25,7 @@ Installed PHP extensions:
 - `soap`
 - `exif`
 - `zip`
+- `pcntl`
 
 ### Xdebug
 The default configuration file for Xdebug is similar to:
