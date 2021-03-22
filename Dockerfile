@@ -30,9 +30,8 @@ RUN apt-get update && apt-get install -y \
     && rm -r /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure gd \
-    --enable-gd-native-ttf \
-    --with-jpeg-dir=/usr/lib \
-    --with-freetype-dir=/usr/include/freetype2
+    --with-freetype \
+    --with-jpeg
 
 RUN docker-php-ext-configure ldap \
     --with-libdir=lib/x86_64-linux-gnu/
