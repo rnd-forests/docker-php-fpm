@@ -24,6 +24,8 @@ RUN apt-get update && apt-get install -y \
     libcurl4 \
     libcurl4-openssl-dev \
     libzip-dev \
+    libssh-dev \
+    librabbitmq-dev \
     htop \
     curl \
     git \
@@ -47,7 +49,9 @@ RUN pecl channel-update pecl.php.net \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && pecl install memcached redis \
-    && docker-php-ext-enable memcached redis
+    && docker-php-ext-enable memcached redis \
+    && pecl install amqp \
+    && docker-php-ext-enable amqp
 
 RUN docker-php-ext-install \
     bcmath \
@@ -57,6 +61,7 @@ RUN docker-php-ext-install \
     mbstring \
     mysqli \
     curl \
+    sockets \
     pdo_mysql \
     pdo_pgsql \
     pgsql \
