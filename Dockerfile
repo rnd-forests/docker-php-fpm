@@ -1,6 +1,6 @@
 FROM php:7.4-fpm
 
-MAINTAINER Nguyen Ngoc Vinh <ngocvinh.nnv@gmail.com>
+LABEL MAINTAINER="Nguyen Ngoc Vinh <ngocvinh.nnv@gmail.com>"
 
 ENV TERM xterm
 
