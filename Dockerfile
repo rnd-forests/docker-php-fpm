@@ -15,12 +15,15 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libssl-dev \
     libxml2-dev \
-    libmcrypt-dev \
     libbz2-dev \
     libsasl2-dev \
     zlib1g-dev \
     libicu-dev \
     libldap2-dev \
+    libonig-dev \
+    libcurl4 \
+    libcurl4-openssl-dev \
+    libzip-dev \
     htop \
     curl \
     git \
@@ -43,8 +46,6 @@ RUN pecl channel-update pecl.php.net \
     && docker-php-ext-enable mongodb \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
-    && pecl install mcrypt-1.0.1 \
-    && docker-php-ext-enable mcrypt \
     && pecl install memcached redis \
     && docker-php-ext-enable memcached redis
 
@@ -55,6 +56,7 @@ RUN docker-php-ext-install \
     iconv \
     mbstring \
     mysqli \
+    curl \
     pdo_mysql \
     pdo_pgsql \
     pgsql \
@@ -62,6 +64,8 @@ RUN docker-php-ext-install \
     gd \
     intl \
     soap \
+    xml \
+    simplexml \
     ldap \
     exif \
     zip \

@@ -8,7 +8,6 @@ Installed PHP extensions:
 - `ldap`
 - `mongodb`
 - `xdebug`
-- `mcrypt`
 - `redis`
 - `memcached`
 - `bcmath`
@@ -26,6 +25,9 @@ Installed PHP extensions:
 - `exif`
 - `zip`
 - `pcntl`
+- `curl`
+- `xml`
+- `simplexml`
 
 ### Xdebug
 The default configuration file for Xdebug is similar to:
